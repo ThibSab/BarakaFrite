@@ -1,0 +1,19 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+ $title = 'BarakaFrite';
+ $this->headTitle($title);
+ ?>
+<a href="<?php echo $this->url('login/process', array('action'=>'login'));?>">Accès Administrateur</a>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('commande', array('action'=>'add'));?>">Nouvelle Commande</a>
+ </p>
+
+ 
+ 

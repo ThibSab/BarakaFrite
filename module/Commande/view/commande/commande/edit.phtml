@@ -1,0 +1,31 @@
+<?php
+
+$title = 'Mettre à jour Commande';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url(
+    'commande',
+    array(
+        'action' => 'edit',
+        'id'     => $this->id,
+    )
+));
+$form->prepare();
+echo '0 Comande en cours';
+echo '</br>';
+echo '1 Commande traité';
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+echo $this->formHidden($form->get('nom'));
+echo $this->formHidden($form->get('prix'));
+echo $this->formrow($form->get('etat'));
+echo '</br>';
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+ 
+

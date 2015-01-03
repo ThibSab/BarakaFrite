@@ -1,0 +1,40 @@
+Gestion des commandes
+<br />
+
+ <table class="table">
+ <tr>
+     <th>Nom</th>
+     <th>Prix</th>
+     <th>Etat</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($commandes as $commande) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($commande->nom);?></td>
+     <td><?php echo $this->escapeHtml($commande->prix).' €';?></td>
+     
+     <?php
+     if($commande->etat == 0){
+        echo'<td>En cours</td>';
+     }
+     
+     else
+     {
+        echo'<td>Commande traité</td>';
+     }
+     ?>
+     
+        
+     <td>
+         <a href="<?php echo $this->url('commande',
+             array('action'=>'edit', 'id' => $commande->id));?>">Finaliser</a>
+         <a href="<?php echo $this->url('commande',
+             array('action'=>'delete', 'id' => $commande->id));?>">Supprimer</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table> 
+
+
+
+<a href = "<?php echo $this->url('login/process', array('action' => 'logout')); ?>">Logout</a>
