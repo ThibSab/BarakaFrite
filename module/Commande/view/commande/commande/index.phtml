@@ -6,11 +6,17 @@
  * and open the template in the editor.
  */
 
- $title = 'BarakaFrite';
+ $title = 'Présentation';
  $this->headTitle($title);
  ?>
-<a href="<?php echo $this->url('login/process', array('action'=>'login'));?>">Accès Administrateur</a>
  <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     Ce site vous permet de passer une commande en ligne afin de ne pas perdre votre temps. <br>
+     Vous restez tranquilement chez vous pendant la préparation, vos frites sont prêtes lorsque vous arrivez ! <br>
+ </p>
+ <p>
+     Bon appetit !<br>
+ </p>
  <p>
      <a href="<?php echo $this->url('commande', array('action'=>'add'));?>">Nouvelle Commande</a>
  </p>
