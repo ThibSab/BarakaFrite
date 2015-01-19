@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 02 Janvier 2015 à 23:19
+-- Généré le :  Lun 19 Janvier 2015 à 10:21
 -- Version du serveur :  5.6.21
 -- Version de PHP :  5.6.3
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `barakabase`
 --
+CREATE DATABASE IF NOT EXISTS `barakabase` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `barakabase`;
 
 -- --------------------------------------------------------
 
@@ -55,7 +57,15 @@ CREATE TABLE IF NOT EXISTS `commande` (
   `nom` varchar(100) NOT NULL,
   `prix` int(11) NOT NULL,
   `etat` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `commande`
+--
+
+INSERT INTO `commande` (`id`, `nom`, `prix`, `etat`) VALUES
+(2, 'Michel', 12, 0),
+(3, 'Roger', 123, 0);
 
 -- --------------------------------------------------------
 
@@ -111,7 +121,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 -- AUTO_INCREMENT pour la table `commande`
 --
 ALTER TABLE `commande`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
