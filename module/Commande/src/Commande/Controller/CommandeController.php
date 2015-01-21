@@ -6,6 +6,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Commande\Model\Commande;          
 use Commande\Form\CommandeForm;
+use Zend\Json\Json as Json;
 
 class CommandeController extends AbstractActionController
 {
@@ -83,6 +84,22 @@ class CommandeController extends AbstractActionController
         return $this->redirect()->toRoute('commande');
         
     }
+    
+    public function exportAction()
+    {
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) {
+            return $this->redirect()->toRoute('commande', array(
+                'action' => 'export'
+            ));
+        }
+        $commande = $this->getCommandeTable()->getCommande($id);
+        $json = Json::encode($commande);
+       
+        echo Json::prettyPrint($json, array("indent" => " "));
+        
+    }
+    
     
     public function getCommandeTable()
     {

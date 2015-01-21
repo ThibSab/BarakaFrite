@@ -27,6 +27,8 @@ Gestion des commandes
         
      <td>
          <a href="<?php echo $this->url('commande',
+             array('action'=>'export', 'id' => $commande->id));?>">Export JSON</a>
+         <a href="<?php echo $this->url('commande',
              array('action'=>'edit', 'id' => $commande->id));?>">Finaliser</a>
          <a href="<?php echo $this->url('commande',
              array('action'=>'delete', 'id' => $commande->id));?>">Supprimer</a>
