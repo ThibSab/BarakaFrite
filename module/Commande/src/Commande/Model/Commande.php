@@ -13,8 +13,10 @@ class Commande
      public $nom;
      public $prix;
      public $etat;
-     
-    public function exchangeArray($data)
+     protected $inputFilter;
+
+
+     public function exchangeArray($data)
     {
         $this->id     = (isset($data['id'])) ? $data['id'] : null;
         $this->nom = (isset($data['nom'])) ? $data['nom'] : null;
