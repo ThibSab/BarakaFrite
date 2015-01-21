@@ -16,6 +16,7 @@ Test the example with : http://localhost/zend_tuto/public/success
 
 Si après cette manipulation, l'authentification ne marche toujours pas, copier l'intégralité du dossier "vendor" de ce projet: https://github.com/lastrecrue/zend_tuto
 dans le vôtre
+
 --------------------------------------
 
 Pour la base de donnée

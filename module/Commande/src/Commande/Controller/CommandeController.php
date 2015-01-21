@@ -87,13 +87,7 @@ class CommandeController extends AbstractActionController
     
     public function exportAction()
     {
-        $id = (int) $this->params()->fromRoute('id', 0);
-        if (!$id) {
-            return $this->redirect()->toRoute('commande', array(
-                'action' => 'export'
-            ));
-        }
-        $commande = $this->getCommandeTable()->getCommande($id);
+        $commande = $this->getCommandeTable()->fetchAll();
         $json = Json::encode($commande);
        
         echo Json::prettyPrint($json, array("indent" => " "));
